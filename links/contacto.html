@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/stilo.css">
+    <link rel="icon" type="image/x-icon" href="../Images/favicon.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>CV FranFP Contacto</title>
+</head>
+
+<body>
+    <div class="page">
+        <header class="cabecera">
+            <div class="titulo">
+                <img src="../Images/favicon.jpg" alt="Foto de perfil" class="image1">
+                <h1>Fran FP</h1>
+            </div>
+            <div class="subtitulo">
+                <h2>Web Developer</h2>
+            </div>
+        </header>
+
+        <aside>
+            <nav class="navmenu">
+                <button onclick="location='../index.html'">Inicio</button>
+                <button onclick="location='proyectos.html'">Proyectos</button>
+                <button onclick="location='contacto.html'">Contacto</button>
+            </nav>
+        </aside>
+
+        <main>
+            <section class="contacto-section">
+                <h2 class="subTitulo">Contacto</h2>
+                <div class="formulario-container">
+                    <form action="/contacto.html" method="get" class="contacto-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" required class="form-control" id="nombre" name="nombre"
+                                placeholder="Introduce tu nombre">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" required class="form-control" id="email" name="email"
+                                placeholder="Introduce tu email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-control"
+                                placeholder="Introduce tu teléfono">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="5"
+                                placeholder="Introduce tu mensaje"></textarea>
+                        </div>
+                        
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="terminos" name="terminos" required>
+                            <label class="form-check-label" for="terminos">He leído y acepto los <a href="#">Términos y condiciones</a></label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn-enviar">Enviar Formulario</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="pie">
+            <div class="redes-sociales">
+                <h3>Redes Sociales</h3>
+                <div class="iconos-redes">
+                    <a href="https://www.linkedin.com/in/fran-fp-7b1b3b1b4/">
+                        <img src="../Images/descarga.png" alt="Linkedin" class="image2" width="40" height="40">
+                    </a>
+                    <a href="https://github.com/FranFP31">
+                        <img src="../Images/Github-desktop-logo-symbol.svg.png" alt="Github" class="image2" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <h4>Todos los derechos reservados por @FranFP</h4>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
