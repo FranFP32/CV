@@ -1,112 +1,204 @@
 <!DOCTYPE html>
 <html lang="es-ES">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PortFolio FranFP</title>
-  <link rel="stylesheet" href="style/stilo.css">
-  <link rel="javascript" href="js/acordeon.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio FranFP31 </title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-  <div class="page">
-    <header class="cabecera">
-      <div class="titulo">
-        <img src="Images/favicon.jpg" alt="Foto de perfil" class="image1">
-        <h1>Fran FP</h1>
-      </div>
-    </header>
-    
-    <aside>
-      <nav class="navmenu">
-        <button onclick="location='index.html'">Inicio</button>
-        <button onclick="location='links/proyectos.html'">Proyectos</button>
-        <button onclick="location='links/contacto.html'">Contacto</button>
-      </nav>
-    </aside>
-    
-    <main>
-      <!-- Sección de Formación -->
-      <section class="seccion-acordeon" id="seccion-formacion">
-        <h2 class="subTitulo acordeon-titulo" id="formacion-titulo">Formación</h2>
-        <div class="acordeon-body" id="formacion-body">
-          <div class="campo-acordeon">
-            <h3>Formación dual para el empleo</h3>
-            <p>Técnico Operaciones en sistemas informáticos<br>
-              Ceat: Tomelloso (Ciudad Real)<br>
-              Marzo 2024 - Febrero 2025</p>
-          </div>
-          
-          <div class="campo-acordeon">
-            <h3>Certificado de profesionalidad</h3>
-            <p>Técnico en Software Ofimático<br>
-              Ceat: Tomelloso (Ciudad Real)<br>
-              Abril 2023 - Junio 2023</p>
-          </div>
-          
-          <div class="campo-acordeon">
-            <h3>Certificado de profesionalidad</h3>
-            <p>Técnico en desarrollo de aplicaciones con Tecnología Web<br>
-              Ceat: Tomelloso (Ciudad Real)<br>
-              Enero 2021 - Septiembre 2021</p>
-          </div>
-          
-          <div class="campo-acordeon">
-            <h3>Grado Medio en Comercio y Marketing</h3>
-            <p>I.E.S. Gregorio Prieto, Valdepeñas (Ciudad Real)<br>
-              Septiembre 2010 - Diciembre 2012</p>
-          </div>
+     <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">FranFP31</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects-web">Proyectos Web</a></li>
+                <li><a href="#projects-code">Proyectos Code</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
         </div>
-      </section>
-      
-      <!-- Sección de Experiencia -->
-      <section class="seccion-acordeon" id="seccion-experiencia">
-        <h2 class="subTitulo acordeon-titulo" id="experiencia-titulo">Experiencia</h2>
-        <div class="acordeon-body" id="experiencia-body">
-          <div class="campo-acordeon">
-            <h3>Pc Mobile Informática CB</h3>
-            <p>Villarrobledo, Albacete<br>
-              Desarrollo de la Ecommerce y sistema de gestión de Stock<br>
-              Junio 2023 - Julio 2024</p>
-          </div>
-          
-          <div class="campo-acordeon">
-            <h3>Ayuntamiento de Terrinches</h3>
-            <p>Terrinches, Ciudad Real<br>
-              Trabajador digitalización de archivos<br>
-              Diciembre 2018 - Noviembre 2019</p>
-          </div>
-          
-          <div class="campo-acordeon">
-            <h3>Ayuntamiento de Terrinches</h3>
-            <p>Terrinches, Ciudad Real<br>
-              Desarrollo de la Web del Ayuntamiento, además de varios proyectos<br>
-              Marzo 2024 - Febrero 2025</p>
-          </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Francisco José Fernandez Parra</h1>
+            <p class="subtitle">Desarrollador Full Stack & Diseñador Creativo</p>
+            <a href="#projects-web" class="cta-button">Proyectos Web</a>
+            <a href="#projects-code" class="cta-button">Proyectos Code</a>
         </div>
-      </section>
-    </main>
-    
-    <footer class="pie">
-      <div class="redes-sociales">
-        <h3>Redes Sociales</h3>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">Sobre mí</h2>
+        <div class="about-content">
+            <div class="about-image">
+                👨‍💻
+            </div>
+            <div class="about-text">
+                <p>Soy un desarrollador apasionado por crear experiencias digitales únicas y funcionales. Con experiencia en tecnologías modernas, me especializo en desarrollar aplicaciones web que combinan un diseño atractivo con una funcionalidad robusta.</p>
+                <p>Mi enfoque se centra en escribir código limpio, crear interfaces intuitivas y resolver problemas complejos de manera creativa. Siempre estoy aprendiendo nuevas tecnologías y mejorando mis habilidades.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects-web">
+        <h2 class="section-title">Mis Proyectos Web</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 class="project-card-title">Pc Mobile Informatica</h3>
+                <p>E-comerce desarrollada en wordpress y woocomerce para la empresa PcMobile Informatica</p>
+                <div class="project-tech">
+                    <span class="tech-tag">woocomerce</span>
+                    <span class="tech-tag">Bakery</span>
+                    <span class="tech-tag">wordpress</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://pcmobileinformatica.es/" class="project-link">Visitar Web → </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-card-title">Terrinches </h3>
+                <p>Pagina de la localidad de Terrinches desarrollada en wordpress, con retoques en css  </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Wordpress</span>
+                    <span class="tech-tag">Css</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://terrinches.com/" class="project-link">Visitar Pagina →</a>
+                    
+                </div>
+            </div>
+            <div class="project-card">
+                <h3 class="project-card-title">Editor de videos para Tic Toc</h3>
+                <p>Edicion de videos de tick tock por encargo.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Vegas</span>
+                    <span class="tech-tag">photoshop</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://www.tiktok.com/@patriciamakeup3" class="project-link">Ver contenido →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects-code">
+        <h2 class="section-title">Mis Proyectos de Programación</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 class="project-card-title">Calculadora</h3>
+                <p>Calculadora realizada en Java con POO</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">POO</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/FranFP31/Calculadora-Java-POO" class="project-link">Visualizar el Codigo → </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-card-title">Banca Online en Spring Boot </h3>
+                <p>Proyecto de aplicación sobre banca Online</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Bootstrap</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/FranFP31/bancOnlieSpringBoot/tree/main/bancOnline" class="project-link">Visualizar el Codigo →</a>
+                    
+                </div>
+            </div>
+           <!--<div class="project-card">
+                <h3 class="project-card-title">Editor de videos para Tic Toc</h3>
+                <p>Edicion de videos de tick tock por encargo.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Vegas</span>
+                    <span class="tech-tag">photoshop</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">Visualizar el Codigo →</a>
+                </div>
+            </div>
+        </div>-->
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <span class="skill-icon">💻</span>
+                <h3>Frontend</h3>
+                <ul class="skill-list">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Angular</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <span class="skill-icon">⚙️</span>
+                <h3>Backend</h3>
+                <ul class="skill-list">
+                    <li>Java</li>
+                    <li>PHP</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <span class="skill-icon">🎨</span>
+                <h3>Diseño</h3>
+                <ul class="skill-list">
+                    <li>Photoshop</li>
+                    <li>Canva</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <span class="skill-icon">🛠️</span>
+                <h3>Herramientas</h3>
+                <ul class="skill-list">
+                    <li>Git & GitHub</li>
+                    <li>Sony Vegas</li>
+                    <li>VS Code</li>
+                    <li>IntelliJ IDEA</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-content">
+            <p>¿Tienes un proyecto en mente? ¡Me encantaría saber de ti!</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu email" required>
+                <input type="text" placeholder="Asunto" required>
+                <textarea rows="6" placeholder="Tu mensaje" required></textarea>
+                <button type="submit" class="submit-btn">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
         <div class="iconos-redes">
           <a href="https://www.linkedin.com/in/fran-fp-7b1b3b1b4/">
-            <img src="Images/descarga.png" alt="Linkedin" class="image2" width="40" height="40">
+            <img src="img/linkedin.png" alt="Linkedin" class="image2" width="40" height="40">
           </a>
           <a href="https://github.com/FranFP31">
-            <img src="Images/Github-desktop-logo-symbol.svg.png" alt="Github" class="image2" width="40" height="40">
+            <img src="img/Github-desktop-logo-symbol.svg.png" alt="Github" class="image2" width="40" height="40">
           </a>
         </div>
-      </div>
-      <div class="copyright">
-        <h4>Todos los derechos reservados por @FranFP</h4>
-      </div>
+        <p>&copy; 2025 Francisco José Fernandez Parra hecho con mucho código.</p>
     </footer>
-  </div>
 
-  <script src="js/acordeon.js"></script>
 </body>
-
 </html>
