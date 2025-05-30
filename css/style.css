@@ -53,8 +53,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            background: var(--gradient-1);
-            color: white;
+            background:white;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
