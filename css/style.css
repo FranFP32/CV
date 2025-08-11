@@ -1,76 +1,297 @@
-       /* Paleta */
+/* ==============================
+   Variables unificadas
+============================== */
 :root {
-  --primary: #2563eb; /* azul profesional */
-  --secondary: #1e293b; /* gris oscuro */
-  --background: #f8fafc; /* gris muy claro */
-  --text: #334155; /* gris medio */
+  --primary: #2563eb; /* Azul profesional */
+  --secondary: #1e293b; /* Gris oscuro */
+  --background: #f8fafc; /* Gris muy claro */
+  --text: #334155; /* Gris medio */
+  --light-color: #ffffff;
+  --dark-color: #0f172a;
+  --gradient-1: linear-gradient(135deg, #2563eb, #1d4ed8);
+  --gradient-2: linear-gradient(135deg, #1e293b, #0f172a);
+  --gradient-3: linear-gradient(135deg, rgba(37,99,235,0.9), rgba(30,41,59,0.9));
 }
 
-/* Reset básico */
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--background);
-  color: var(--text);
+/* ==============================
+   Reset y tipografía
+============================== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Arial', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Títulos */
-h1, h2, h3 {
-  color: var(--secondary);
-  font-weight: 600;
-  margin-bottom: 0.5em;
+/* ==============================
+   Navegación
+============================== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--gradient-3);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
 }
 
-/* Secciones */
+nav.scrolled {
+  background: rgba(45, 52, 54, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--light-color);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-1);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ==============================
+   Hero Section
+============================== */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--gradient-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--light-color);
+}
+
+.hero .subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  color: var(--light-color);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: var(--gradient-1);
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ==============================
+   Secciones generales
+============================== */
 section {
-  padding: 3rem 1rem;
-  max-width: 900px;
+  padding: 4rem 1rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Proyectos en tarjetas */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==============================
+   Proyectos
+============================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
 .project-card {
   background: white;
   border-radius: 12px;
+  padding: 2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .project-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Botones */
-button, a.btn {
-  display: inline-block;
+.project-card h3 {
+  font-size: 1.4rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+
+.tech-tag {
+  color: white;
+  background: var(--primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* ==============================
+   Skills
+============================== */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+}
+
+/* ==============================
+   Contacto
+============================== */
+.contact-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: white;
+  font-size: 1rem;
+}
+
+.submit-btn {
   background: var(--primary);
   color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.2s ease;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
 }
-button:hover, a.btn:hover {
+
+.submit-btn:hover {
   background: #1d4ed8;
 }
 
-/* Navegación */
-nav {
-  background: white;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  position: sticky;
-  top: 0;
-}
-nav a {
-  margin-right: 1.5rem;
+/* ==============================
+   Footer
+============================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #e2e8f0;
+  margin-top: 3rem;
   color: var(--secondary);
-  text-decoration: none;
-  font-weight: 500;
 }
-nav a:hover {
-  color: var(--primary);
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero .subtitle {
+    font-size: 1.1rem;
+  }
 }
