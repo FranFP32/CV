@@ -5,7 +5,12 @@
   --primary: #2563eb; /* Azul profesional */
   --secondary: #1e293b; /* Gris oscuro */
   --background: #f8fafc; /* Gris muy claro */
+  --background-container: #b3b3b3; /* Gris contenedores */
   --text: #334155; /* Gris medio */
+ 
+}
+
+
 
 
 /* ==============================
@@ -15,8 +20,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: var(--background);
 }
-
 body {
   font-family: 'Inter', 'Arial', sans-serif;
   background-color: var(--background);
@@ -32,7 +37,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--gradient-3);
+  background: var(--background);
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 0;
@@ -45,6 +50,7 @@ nav.scrolled {
 }
 
 .nav-container {
+  background-color: var(--background);
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -56,7 +62,7 @@ nav.scrolled {
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  background: var(--gradient-1);
+  background: var(--secondary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -98,6 +104,7 @@ nav.scrolled {
    Hero Section
 ============================== */
 .hero {
+  
   height: 100vh;
   display: flex;
   align-items: center;
@@ -148,6 +155,7 @@ nav.scrolled {
    Secciones generales
 ============================== */
 section {
+  
   padding: 4rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -157,9 +165,7 @@ section {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: var(--background);
 }
 
 /* ==============================
@@ -170,13 +176,22 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-decoration: var(--secondary);
+  padding-bottom: 1rem  ;
+}
 
 .project-card {
-  background: white;
+  background: var(--background);
+  border: 1px solid var(--background-container);
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding-top: 1rem ;
+  margin-bottom: 3rem ;
 }
 
 .project-card:hover {
@@ -198,25 +213,50 @@ section {
 }
 
 .tech-tag {
-  color: white;
-  background: var(--primary);
+  text-decoration: none;
+  color: var(--secondary);
+  background: var(--background);
+  border: 1px solid var(--secondary);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: bold;
 }
+.tech-tag:hover {
+  background: var(--primary);
+  color: white;
+  border: 1px solid var(--primary);
+}
+.project-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: bold;
+  margin-right: 1.5rem;
+}
+.project-links a:hover {
+  color: var(--primary);
+}
 
 /* ==============================
    Skills
 ============================== */
+.skill-list {
+  list-style: none;
+}
+
+
 .skills-container {
+  background-color: var(--background);
+  text-decoration: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
 .skill-category {
-  background: white;
+  border: 1px solid var(--background-container);
+  color: var(--secondary);
+  background: var(--background);
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
@@ -231,6 +271,7 @@ section {
    Contacto
 ============================== */
 .contact-content {
+  border-radius: 15px;
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
@@ -252,9 +293,9 @@ section {
 }
 
 .submit-btn {
-  background: var(--primary);
-  color: white;
-  border: none;
+  border: 1 px solid var(--text);
+  background: var(--background);
+  color: var(--text);
   padding: 1rem;
   border-radius: 10px;
   font-weight: bold;
@@ -262,6 +303,7 @@ section {
 }
 
 .submit-btn:hover {
+  color : white;
   background: #1d4ed8;
 }
 
@@ -269,9 +311,10 @@ section {
    Footer
 ============================== */
 footer {
+  background-color: var(--background);
   text-align: center;
   padding: 2rem;
-  background: #e2e8f0;
+  background: var(--background);
   margin-top: 3rem;
   color: var(--secondary);
 }
