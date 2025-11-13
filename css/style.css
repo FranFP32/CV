@@ -29,72 +29,140 @@ body {
 /* ==============================
    Navegación
 ============================== */
+/* ---------------- NAVBAR GLASS ---------------- */
+/* ---------------- NAVBAR ---------------- */
+
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--background);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
   padding: 1rem 0;
-  transition: all 0.3s ease;
+  z-index: 1000;
+
+  background: rgba(45, 52, 54, 0.10); /* Transparencia */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav.scrolled {
-  background: rgba(45, 52, 54, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(45, 52, 54, 0.85); /* Gris al scrollear */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
+/* ---------------- CONTENEDOR ---------------- */
+
 .nav-container {
-  background-color: var(--background);
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+
+  background: transparent !important;
 }
+
+/* ---------------- LOGO ---------------- */
 
 .logo {
   font-size: 1.8rem;
-  font-weight: bold;
-  background: var(--secondary);
+  font-weight: 700;
+  background: var(--primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* ============================
+   NAVBAR FIJA
+   ============================ */
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #2D3436;  /* Color fijo */
+  padding: 1rem 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: var(--primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================
+   LINKS CON BLUR PRIMARY
+   ============================ */
+
 .nav-links {
   display: flex;
+  gap: 0.75rem;        /* ya no parecerán huecos grandes */
   list-style: none;
-  gap: 2rem;
+  background: #2f3437; /* tu gris oscuro */
+  padding: 0.5rem;     /* para que no quede pegado */
+  border-radius: 1rem; /* opcional si quieres suavidad */
+  margin: 0;
 }
+
 
 .nav-links a {
-  color: var(--light-color);
+  position: relative;
+  color: var(--primary);
   text-decoration: none;
   font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
+
+  padding: 8px 14px;
+  border-radius: 8px;
+
+  /* Glass effect en color primario */
+  background: rgba(0, 123, 255, 0.10);              /* Azul muy sutil */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: background .3s ease, color .3s ease, transform .2s ease;
 }
 
+/* Hover */
 .nav-links a:hover {
-  color: var(--primary);
+  background: rgba(0, 123, 255, 0.25);              /* Más visible */
+  transform: translateY(-2px);
 }
 
+/* Línea inferior animada */
 .nav-links a::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: -5px;
   left: 0;
-  width: 0;
+  bottom: -4px;
+  width: 0%;
   height: 2px;
-  background: var(--gradient-1);
+  background: var(--primary);
+  border-radius: 2px;
   transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after {
   width: 100%;
 }
+
 
 /* ==============================
    Hero Section
