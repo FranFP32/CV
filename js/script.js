@@ -1,3 +1,4 @@
+
  // Navegación suave
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -8,7 +9,7 @@
             });
         });
 
-        // Efecto navbar al hacer scroll
+// Efecto navbar al hacer scroll
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 100) {
@@ -18,7 +19,7 @@
             }
         });
 
-        // Animación de entrada para elementos
+// Animación de entrada para elementos
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -33,7 +34,7 @@
             });
         }, observerOptions);
 
-        // Observar elementos para animación
+// Observar elementos para animación
         document.querySelectorAll('.project-card, .skill-category').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
@@ -41,7 +42,7 @@
             observer.observe(el);
         });
 
-        // Efecto de escritura para el título
+// Efecto de escritura para el título
         function typeWriter(element, text, speed = 100) {
             let i = 0;
             element.innerHTML = '';
@@ -55,35 +56,48 @@
             typing();
         }
 
-        // Aplicar efecto de escritura al cargar la página
-        window.addEventListener('load', function() {
-            const heroTitle = document.querySelector('.hero h1');
-            const originalText = heroTitle.textContent;
-            typeWriter(heroTitle, originalText, 80);
-        });
+//carousel de proyectos
+console.log("🔧 script.js cargado");
 
-        // Manejo del formulario de contacto
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simular envío del formulario
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                submitBtn.textContent = '¡Enviado! ✓';
-                submitBtn.style.background = 'linear-gradient(135deg, #00b894, #00a085)';
-                
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                    this.reset();
-                }, 2000);
-            }, 1500);
-        });
-        //Formulario de contacto
-        
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("📂 DOM listo");
+    //Busquedas del Dom
+  const cards = document.querySelectorAll(".card");
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("prev");
+
+  
+
+  console.log("✅ Elementos encontrados:", { cardsCount: cards.length, nextBtn, prevBtn });
+
+  let active = 0;
+
+  function updateCards() {
+    cards.forEach((card, index) => {
+      card.className = "card"; // reset
+      if (index === active) card.classList.add("active");
+      else if (index === (active - 1 + cards.length) % cards.length)
+        card.classList.add("left", "inactive");
+      else if (index === (active + 1) % cards.length)
+        card.classList.add("right", "inactive");
+      else card.classList.add("inactive");
+    });
+  }
+  //bucle infinito de direcciones 
+  nextBtn.addEventListener("click",()=>{
+    active=(active+1)%cards.length;
+    updateCards();
+  });
+  prevBtn.addEventListener("click",()=>{
+    active=(active -1+ cards.length)%cards.length;
+    updateCards();
+  });
+  //clic directo a la tarjeta
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      active = index;
+      updateCards();
+    });
+  });
+  updateCards();
+});

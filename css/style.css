@@ -211,8 +211,90 @@ section {
   gap: 0.4rem;
   margin: 1rem 0;
 }
+.carousel-container {
+      position: relative;
+      width: 90%;
+      max-width: 1200px;
+      height: 550px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.tech-tag {
+    .card {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card.active img {
+      transform: scale(1.05);
+    }
+
+    .card.inactive {
+      filter: blur(2px) brightness(0.7);
+      transform: scale(0.7);
+      z-index: 1;
+    }
+
+    .card.left {
+      transform: translateX(-60%) scale(0.6);
+    }
+
+    .card.right {
+      transform: translateX(60%) scale(0.6);
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: #fff;
+    }
+
+    .card-content h3 {
+      margin: 0;
+      font-size: 1.8em;
+      font-weight: 700;
+    }
+
+    .card-content .buttons {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .card-content a {
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .card-content a:hover {
+      background: #000;
+      color: #fff;
+    }
+    .tech-tag {
   text-decoration: none;
   color: var(--secondary);
   background: var(--background);
@@ -235,6 +317,135 @@ section {
 }
 .project-links a:hover {
   color: var(--primary);
+}
+
+ /* ==== PORTFOLIO CAROUSEL ==== */
+#portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  background: #f4f6f8;
+}
+
+.carousel-container {
+  position: relative;
+  width: 80%;
+  max-width: 1100px;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* ==== TARJETAS ==== */
+.card {
+  position: absolute;
+  max-width: 60%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: scale(0.8) translateX(100%) rotateY(20deg);
+  z-index: 0;
+}
+
+.card.active {
+  opacity: 1;
+  transform: scale(1) translateX(0) rotateY(0);
+  z-index: 3;
+}
+
+.card.left {
+  opacity: 0.6;
+  transform: scale(0.8) translateX(-70%) rotateY(-20deg);
+  z-index: 1;
+}
+
+.card.right {
+  opacity: 0.6;
+  transform: scale(0.8) translateX(70%) rotateY(20deg);
+  z-index: 1;
+}
+
+.card img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+.card-content h3 {
+  color: var(--secondary);
+}
+.tech-tag {
+  display: inline-block;
+  background: #eee;
+  border-radius: 12px;
+  padding: 5px 10px;
+  margin: 4px;
+  font-size: 0.8rem;
+}
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttons a {
+  align-items: center;
+  display: inline-block;
+  margin: 10px 5px 0;
+  padding: 8px 16px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.buttons a:hover {
+  background: #0056b3;
+}
+
+/* ==== BOTONES DEL CARRUSEL ==== */
+.btn-prev,
+.btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.btn-prev {
+  left: 20px;
+}
+
+.btn-next {
+  right: 20px;
 }
 
 /* ==============================

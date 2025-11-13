@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FranFP</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link href="js/script.js"rel="JavaScript">
 </head>
 <body>
      <nav id="navbar">
@@ -40,89 +39,103 @@
             </div>
         </div>
     </section>
+<section id="portfolio">
+  <div class="carousel-container">
+    <button class="btn-prev" id="prev">❮</button>
 
-    <section id="projects">
-        <h2 class="section-title"> Proyectos Anteriores </h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3 class="project-card-title">Pc Mobile Informatica</h3>
-                <p>E-comerce desarrollada en wordpress y woocomerce para la empresa PcMobile Informatica</p>
-                <div class="project-tech">
-                    <span class="tech-tag">woocomerce</span>
-                    <span class="tech-tag">Bakery</span>
-                    <span class="tech-tag">wordpress</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://pcmobileinformatica.es/" class="project-link">Visitar Web → </a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3 class="project-card-title">Terrinches </h3>
-                <p>Pagina de la localidad de Terrinches desarrollada en wordpress, con retoques en css  </p>
-                <div class="project-tech">
-                    <span class="tech-tag">Wordpress</span>
-                    <span class="tech-tag">Css</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://terrinches.com/" class="project-link">Visitar Pagina →</a>
-                    
-                </div>
-            </div>
-            <div class="project-card">
-                <h3 class="project-card-title">Editor de videos para Tic Toc</h3>
-                <p>Edicion de videos de tick tock por encargo.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Vegas</span>
-                    <span class="tech-tag">photoshop</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://www.tiktok.com/@patriciamakeup3" class="project-link">Ver contenido →</a>
-                </div>
-            </div>
+    <!-- Card 1 -->
+    <div class="card active">
+      <img src="./img/proyecto1.png" alt="PcMobile Informatica"/>
+      <div class="card-content">
+        <h3 class="card-title">PcMobile Informatica</h3>
+        <span class="tech-tag">Woocomerce</span>
+        <span class="tech-tag">Bakery</span>
+        <span class="tech-tag">Wordpress</span>
+        <span class="tech-tag">SEO</span>
+        <span class="tech-tag">Marketing Digital</span>
+        <span class="tech-tag">Gestión de Contenidos</span>
+        <span class="tech-tag">Tienda Online</span>
+        <span class="tech-tag">Diseño Web</span>
+        <div class="buttons">
+          <a href="https://www.pcmobileinformatica.es">Ver Página</a>
         </div>
-    
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3 class="project-card-title">Space Invader</h3>
-                <p>Primera version del clasico Space Invaders en Java</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">POO</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/FranFP31/SpaceInvaders" class="project-link">Visualizar el Codigo → </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3 class="project-card-title">Sistema de gestion de alumnos </h3>
-                <p>Sistema de gestion creado en Spring Boot, Java y Thymeleaf </p>
-                <div class="project-tech">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">POO</span>
-                    <span class="tech-tag">Thymeleaf </span>
-                    <span class="tech-tag">Spring Boot</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/FranFP31/Calculadora-Java-POO" class="project-link">Visualizar el Codigo → </a>
-                </div>
-            </div>
+      </div>
+    </div>
 
-            <div class="project-card">
-                <h3 class="project-card-title">Banca Online</h3>
-                <p>Proyecto de aplicación sobre banca Online</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Bootstrap</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/FranFP31/bancOnlieSpringBoot/tree/main/bancOnline" class="project-link">Visualizar el Codigo →</a>
-                    
-                </div>
-            </div>
-    </section>
+    <!-- Card 2 -->
+    <div class="card right">
+      <img src="./img/proyecto2.png" alt="Terrinches" />
+      <div class="card-content">
+        <h3>Terrinches</h3>
+        <span class="tech-tag">Wordpress</span>
+        <span class="tech-tag">Elementor</span>
+        <span class="tech-tag">WooCommerce</span>
+        <span class="tech-tag">Gestión de Contenidos</span>
+        <span class="tech-tag">SEO</span>
+        <span class="tech-tag">Marketing Digital</span>
+        <div class="buttons">
+          <a href="https://www.terrinches.com">Ver Página</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card inactive right">
+      <img src="./img/proyecto3.jpeg" alt="patriciamakeup3" />
+      <div class="card-content">
+        <h3>Editor de videos para TikTok</h3>
+        <span class="tech-tag">Vegas</span>
+        <span class="tech-tag">Photoshop</span>
+        <div class="buttons">
+          <a href="https://www.tiktok.com/@patriciamakeup3">Ver Contenido</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card inactive right">
+      <img src="img/proyecto4.jpg" alt="Proyecto 4" />
+      <div class="card-content">
+        <h3>Gestor de Alumnos</h3>
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">Spring Boot</span>
+        <span class="tech-tag">Thymeleaf</span>
+        <span class="tech-tag">MySQL</span>
+        <div class="buttons">
+          <a href="https://github.com/FranFP31/GestorAlumnos">Ver Código</a>
+          <a href="#">Ver Diseño</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card inactive right">
+      <img src="img/proyecto5.jpg" alt="Proyecto 5" />
+      <div class="card-content">
+        <h3>Space Invaders</h3>
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">POO</span>
+        <div class="buttons">
+          <a href="#">Ver Código</a>
+        </div>
+      </div>
+    </div>
+    <!-- Card 6 -->
+    <div class="card inactive right">
+      <img src="img/proyecto6.jpg" alt="Proyecto 6" />
+      <div class="card-content">
+        <h3>Calculadora</h3>
+        <span class="tech-tag">JAVA</span>
+        <span class="tech-tag">POO</span>
+        <div class="buttons">
+          <a href="https://github.com/FranFP31/Calculadora">Ver Código</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-next" id="next">❯</button>
+  </div>
+</section>
 
     <section id="skills">
         <h2 class="section-title">Habilidades</h2>
@@ -196,7 +209,7 @@
         </div>
         <p>&copy; 2025 Francisco José Fernandez Parra hecho con mucho código.</p>
     </footer>
-
+<script src="./js/script.js"></script>
 </body>
 </html>
 
