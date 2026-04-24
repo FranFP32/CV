@@ -1,547 +1,130 @@
-/* ==============================
-   Variables unificadas
-============================== */
-:root {
-  --primary: #2563eb; /* Azul profesional */
-  --secondary: #1e293b; /* Gris oscuro */
-  --background: #f8fafc; /* Gris muy claro */
-  --background-container: #b3b3b3; /* Gris contenedores */
-  --text: #334155; /* Gris medio */
- 
+
+
+header{
+    text-align: center;
+    background-color: #333;
+    color: orange;
+}
+.titulo{
+    font-size: 24px;
+    padding: 20px;
+}
+.perfil{
+    color: white;
+    font-size: large;
+    padding: 14px 20px;
 }
 
-
-
-
-/* ==============================
-   Reset y tipografía
-============================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: var(--background);
+.perfil:hover{
+    color: orange;
 }
-body {
-  font-family: 'Inter', 'Arial', sans-serif;
-  background-color: var(--background);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
+.mensajes{
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
 }
 
-/* ==============================
-   Navegación
-============================== */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--background);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  padding: 1rem 0;
-  transition: all 0.3s ease;
+.mensajes:hover{
+    color: orange;
+}
+.notificaciones{
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+}
+.notificaciones:hover{
+    color: orange;
 }
 
-nav.scrolled {
-  background: rgba(45, 52, 54, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+/* Estilos para el contenido principal */
+.contenido-principal{
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}   
+.descripcion{
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.corazon{
+    height: 20px;
+}
+.corazon:hover{
+    color: red;
+}
+.comentar{
+    height: 20px;
+}
+.compartir{
+    height: 20px;
 }
 
-.nav-container {
-  background-color: var(--background);
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
+/* Estilos del perfil  */
+.foto{
+    position: static;
+    
+    width: 100%;
+    height: auto;
+    border-radius: 25%;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  background: var(--secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Contenedor principal */
+#repos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 0;
+    margin-top: 40px;
+    list-style: none;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
+/* Tarjeta de cada repositorio */
+.repo-item {
+    background: linear-gradient(145deg, #1f2937, #111827);
+    border: 1px solid #374151;
+    border-radius: 18px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-.nav-links a {
-  color: var(--light-color);
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
+.repo-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
+    border-color: #60a5fa;
 }
 
-.nav-links a:hover {
-  color: var(--primary);
+/* Título */
+.repo-item a {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gradient-1);
-  transition: width 0.3s ease;
+.repo-item a:hover {
+    color: #60a5fa;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+/* Descripción */
+.repo-item p {
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 70px;
 }
 
-/* ==============================
-   Hero Section
-============================== */
-.hero {
-  
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: var(--gradient-2);
-  position: relative;
-  overflow: hidden;
+/* Información adicional */
+.repo-item small {
+    display: block;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    border-top: 1px solid #374151;
+    padding-top: 15px;
 }
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--light-color);
-}
-
-.hero .subtitle {
-  font-size: 1.3rem;
-  opacity: 0.9;
-  margin-bottom: 2rem;
-  color: var(--light-color);
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 0.9rem 2rem;
-  background: var(--gradient-1);
-  color: white;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.cta-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* ==============================
-   Secciones generales
-============================== */
-section {
-  
-  padding: 4rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 3rem;
-  background: var(--background);
-}
-
-/* ==============================
-   Proyectos
-============================== */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-.section-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  text-decoration: var(--secondary);
-  padding-bottom: 1rem  ;
-}
-
-.project-card {
-  background: var(--background);
-  border: 1px solid var(--background-container);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  padding-top: 1rem ;
-  margin-bottom: 3rem ;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.project-card h3 {
-  font-size: 1.4rem;
-  color: var(--secondary);
-  margin-bottom: 0.5rem;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin: 1rem 0;
-}
-.carousel-container {
-      position: relative;
-      width: 90%;
-      max-width: 1200px;
-      height: 550px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .card {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 25px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .card.active img {
-      transform: scale(1.05);
-    }
-
-    .card.inactive {
-      filter: blur(2px) brightness(0.7);
-      transform: scale(0.7);
-      z-index: 1;
-    }
-
-    .card.left {
-      transform: translateX(-60%) scale(0.6);
-    }
-
-    .card.right {
-      transform: translateX(60%) scale(0.6);
-    }
-
-    .card-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 25px;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-      color: #fff;
-    }
-
-    .card-content h3 {
-      margin: 0;
-      font-size: 1.8em;
-      font-weight: 700;
-    }
-
-    .card-content .buttons {
-      margin-top: 12px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .card-content a {
-      background: #fff;
-      color: #000;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: 0.3s ease;
-    }
-
-    .card-content a:hover {
-      background: #000;
-      color: #fff;
-    }
-    .tech-tag {
-  text-decoration: none;
-  color: var(--secondary);
-  background: var(--background);
-  border: 1px solid var(--secondary);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-.tech-tag:hover {
-  background: var(--primary);
-  color: white;
-  border: 1px solid var(--primary);
-}
-.project-links a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: bold;
-  margin-right: 1.5rem;
-}
-.project-links a:hover {
-  color: var(--primary);
-}
-
- /* ==== PORTFOLIO CAROUSEL ==== */
-#portfolio {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 0;
-  background: #f4f6f8;
-}
-
-.carousel-container {
-  position: relative;
-  width: 80%;
-  max-width: 1100px;
-  height: 550px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  perspective: 1000px;
-}
-
-/* ==== TARJETAS ==== */
-.card {
-  position: absolute;
-  max-width: 60%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.6s ease;
-  opacity: 0;
-  transform: scale(0.8) translateX(100%) rotateY(20deg);
-  z-index: 0;
-}
-
-.card.active {
-  opacity: 1;
-  transform: scale(1) translateX(0) rotateY(0);
-  z-index: 3;
-}
-
-.card.left {
-  opacity: 0.6;
-  transform: scale(0.8) translateX(-70%) rotateY(-20deg);
-  z-index: 1;
-}
-
-.card.right {
-  opacity: 0.6;
-  transform: scale(0.8) translateX(70%) rotateY(20deg);
-  z-index: 1;
-}
-
-.card img {
-  width: 90%;
-  height: 90%;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 1rem 1.5rem;
-  text-align: center;
-}
-.card-content h3 {
-  color: var(--secondary);
-}
-.tech-tag {
-  display: inline-block;
-  background: #eee;
-  border-radius: 12px;
-  padding: 5px 10px;
-  margin: 4px;
-  font-size: 0.8rem;
-}
-.buttons {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.buttons a {
-  align-items: center;
-  display: inline-block;
-  margin: 10px 5px 0;
-  padding: 8px 16px;
-  background: #007bff;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.buttons a:hover {
-  background: #0056b3;
-}
-
-/* ==== BOTONES DEL CARRUSEL ==== */
-.btn-prev,
-.btn-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 10;
-  transition: background 0.3s;
-}
-
-.btn-prev:hover,
-.btn-next:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.btn-prev {
-  left: 20px;
-}
-
-.btn-next {
-  right: 20px;
-}
-
-/* ==============================
-   Skills
-============================== */
-.skill-list {
-  list-style: none;
-}
-
-
-.skills-container {
-  background-color: var(--background);
-  text-decoration: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.skill-category {
-  border: 1px solid var(--background-container);
-  color: var(--secondary);
-  background: var(--background);
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.skill-category:hover {
-  transform: translateY(-5px);
-}
-
-/* ==============================
-   Contacto
-============================== */
-.contact-content {
-  border-radius: 15px;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact-form {
-  display: grid;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 1rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  background: white;
-  font-size: 1rem;
-}
-
-.submit-btn {
-  border: 1 px solid var(--text);
-  background: var(--background);
-  color: var(--text);
-  padding: 1rem;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  color : white;
-  background: #1d4ed8;
-}
-
-/* ==============================
-   Footer
-============================== */
-footer {
-  background-color: var(--background);
-  text-align: center;
-  padding: 2rem;
-  background: var(--background);
-  margin-top: 3rem;
-  color: var(--secondary);
-}
-
-/* ==============================
-   Responsive
-============================== */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .hero .subtitle {
-    font-size: 1.1rem;
-  }
-}
-
